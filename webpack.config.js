@@ -8,7 +8,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 });
 
 const config = {
-  entry: './src/index.tsx',
+  entry: './src/components/index.tsx',
   output: {
     path: __dirname + "/dist",
     filename: 'bundle.js'
@@ -20,13 +20,14 @@ const config = {
   module: {
     rules: [
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      // { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
     ]
   },
+  mode:'production',
   plugins: [htmlPlugin]
 }
 
