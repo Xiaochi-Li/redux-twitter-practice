@@ -1,13 +1,20 @@
 import * as React from 'react';
 import '../css/App.css';
 
-import Button from 'antd/lib/button';
+import { Route, Switch } from "react-router";
+import { HomePage } from "./HomePage/HomePage";
+import { Nav } from "./Nav/Nav";
+import { NewTweet } from "./NewTweet/NewTweet";
 
 class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <Button type="primary">test</Button>
+        <Nav/>
+        <Switch>
+          <Route exact={true} path="/" component={HomePage}/>
+          <Route path="/NewTweet" component={NewTweet}/>
+        </Switch>
       </div>
     );
   }
