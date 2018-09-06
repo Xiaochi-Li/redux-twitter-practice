@@ -3,7 +3,7 @@ import {
   _getUsers,
   _saveLikeToggle,
   _saveTweet,
-} from './_DATA.js'
+} from './_DATA'
 
 export function getInitialData () {
   return Promise.all([

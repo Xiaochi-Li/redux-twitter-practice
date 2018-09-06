@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { connect } from "react-redux";
 import '../css/App.css';
 
 import { Layout } from "antd"
@@ -8,9 +9,14 @@ import { HomePage } from "./HomePage/HomePage";
 import { Nav } from "./Nav/Nav";
 import { NewTweet } from "./NewTweet/NewTweet";
 
+import {handleInitialData} from "../core/actions/utilActions";
+
 const {Header, Content} = Layout;
 
-class App extends React.Component {
+class App extends React.Component <{dispatch:any}>{
+  public componentDidMount(){
+    this.props.dispatch(handleInitialData);
+  }
   public render() {
     return (
       <Layout className="App">
@@ -28,4 +34,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect()(App);
