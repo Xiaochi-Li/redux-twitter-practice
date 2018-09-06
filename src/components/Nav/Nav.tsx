@@ -1,19 +1,24 @@
 import * as React from 'react';
 
-import {Breadcrumb} from "antd";
+import {Menu} from "antd";
 import { Link } from "react-router-dom";
 
 // interface NavProps {}
 
 export const Nav: React.SFC<{}> = (props) => {
   return (
-    <Breadcrumb>
-      <Breadcrumb.Item>
+    <Menu
+      theme="dark"
+      mode="horizontal"
+      defaultSelectedKeys={['2']}
+      style={{ lineHeight: '64px' }}
+    >
+      <Menu.Item key={1}>
         <Link to="/">Home</Link>
-      </Breadcrumb.Item>
-      <Breadcrumb.Item>
+      </Menu.Item>
+      <Menu.Item key={2}>
         <Link to="/NewTweet">New Tweet</Link>
-      </Breadcrumb.Item>
-    </Breadcrumb>
+      </Menu.Item>
+    </Menu>
   )
 };
