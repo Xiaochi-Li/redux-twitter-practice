@@ -1,6 +1,6 @@
 import { SET_AUTHENED_USER } from "../actions/authedUser";
 
-export default function authenUserReducer(state = null, action: any) {
+export default function authenUser(state = null, action: any) {
   switch (action.type) {
     case SET_AUTHENED_USER:
       return action.id;
