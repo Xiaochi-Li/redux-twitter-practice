@@ -26,7 +26,7 @@ class App extends React.Component <{dispatch:any}>{
         </Header>
         <Content style={{ padding: '0 50px', marginTop: 64 }}>
           <Switch>
-            <Route path="/" component={HomePage}/>
+            <Route exact={true} path="/" component={HomePage}/>
             <Route path="/NewTweet" component={NewTweet}/>
           </Switch>
         </Content>
